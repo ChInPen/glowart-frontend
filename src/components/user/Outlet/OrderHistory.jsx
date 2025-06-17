@@ -8,7 +8,7 @@ function OrderHistory() {
   const [isEditing, setIsEditing] = useState(false); //修改狀態
   useEffect(() => {
     axios
-      .get("http://localhost:8000/user/member/order_item")
+      .get("https://glowart-backend.onrender.com/user/member/order_item")
       .then(res => {
         setSubmissions(res.data);
         console.log(res.data);
@@ -21,7 +21,7 @@ function OrderHistory() {
   const handleDelete = async (id) => {
     if (!window.confirm("確定要取消訂單嗎？")) return;
     try {
-      await axios.delete(`http://localhost:8000/user/member/order/${id}`);
+      await axios.delete(`https://glowart-backend.onrender.com/user/member/order/${id}`);
       setSubmissions(prev => prev.filter(item => item.id !== id));
       alert("訂單已成功刪除！");
     } catch (err) {

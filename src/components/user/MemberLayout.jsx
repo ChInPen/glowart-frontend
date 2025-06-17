@@ -16,7 +16,7 @@ function MemberLayout() {
     const controller = new AbortController();
     const checkLoginStatus = async () => { 
       try {
-        const response = await axios.get("http://localhost:8000/login/me", {
+        const response = await axios.get("https://glowart-backend.onrender.com/login/me", {
           withCredentials: true,
           signal: controller.signal, // 🔄 加入中斷的 Signal
         });

@@ -9,7 +9,7 @@ function FavoriteList() {
   useEffect(() => {
     async function fetchFavorites() {
       try {
-        const res = await axios.get("http://localhost:8000/user/member/favorites");
+        const res = await axios.get("https://glowart-backend.onrender.com/user/member/favorites");
         setFavorites(res.data);
       } catch (err) {
         console.error("無法取得收藏紀錄：", err);
@@ -26,7 +26,7 @@ function FavoriteList() {
   const handleDelete = async (id) => {
     if (!window.confirm("確定要移除這項收藏嗎？")) return;
     try {
-      await axios.delete(`http://localhost:8000/user/member/favorites/${id}`);
+      await axios.delete(`https://glowart-backend.onrender.com/user/member/favorites/${id}`);
       setFavorites(prev => prev.filter(item => item.id !== id));
     } catch (err) {
       console.error("刪除失敗", err);

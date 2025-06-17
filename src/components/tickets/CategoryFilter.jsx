@@ -10,7 +10,7 @@ function CategoryFilter({ onChange }) {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/user/Category"); // 抓取類別資料
+        const response = await axios.get("https://glowart-backend.onrender.com/user/Category"); // 抓取類別資料
         setCategories(response.data); // 設定資料到 state
         // console.log(response.data);
 

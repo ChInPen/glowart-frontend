@@ -22,7 +22,7 @@ function AnnouncementInside() {
         const fetchAnnouncementData = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:8000/api/announcement/${id}`);
+                const response = await axios.get(`https://glowart-backend.onrender.com/api/announcement/${id}`);
 
                 // 處理描述中description的 \n\n 字符，轉成真正的換行符
                 if (response.data && response.data.description) {

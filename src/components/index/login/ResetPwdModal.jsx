@@ -13,7 +13,7 @@ const ResetPwdModal = ({ switchTo, email, code }) => {
       setMessage("兩次密碼輸入不一致");
       return;
     }
-    axios.post("http://localhost:8000/login/reset-password", {
+    axios.post("https://glowart-backend.onrender.com/login/reset-password", {
       email,
       code,
       newPassword: pwd

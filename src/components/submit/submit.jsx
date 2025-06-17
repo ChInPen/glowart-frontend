@@ -81,7 +81,7 @@ function Categories({ onSubmitPost }) {
     React.useEffect(() => {
         async function categoryData(params) {
             try {
-                let res = await axios.get("http://localhost:8000/user/Category")
+                let res = await axios.get("https://glowart-backend.onrender.com/user/Category")
                 setData(res.data)
             } catch (error) {
                 console.log("無法讀取資料庫");
@@ -191,7 +191,7 @@ function Submit() {
             return;
         }
         try {
-            await axios.post("http://localhost:8000/submit/submit", formData, {
+            await axios.post("https://glowart-backend.onrender.com/submit/submit", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'  //  設定 multipart/form-data
                 },

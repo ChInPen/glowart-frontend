@@ -30,7 +30,7 @@ const RegisterModal = ({ switchTo }) => {
     }
 
     // 真正呼叫後端
-    axios.post("http://localhost:8000/login/register", fordata)
+    axios.post("https://glowart-backend.onrender.com/login/register", fordata)
       .then(res => {
         // 註冊成功，跳回登入
         alert("註冊成功，將跳回登入畫面")

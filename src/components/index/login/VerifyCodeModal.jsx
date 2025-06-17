@@ -9,7 +9,7 @@ const VerifyCodeModal = ({ switchTo, email }) => {
 
   const handleVerify = () => {
     // call 後端 /verify-code
-    axios.post("http://localhost:8000/login/verify-code", { email, code })
+    axios.post("https://glowart-backend.onrender.com/login/verify-code", { email, code })
       .then(res => {
         // 驗證成功 → 切到重設密碼，並帶上 email + code
         switchTo("newPwd", { email, code });

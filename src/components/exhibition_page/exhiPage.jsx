@@ -61,7 +61,7 @@ function useInteraction(type) {
         const checkInteractionStatus = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:8000/exhibition/${id}/${type}-status`,
+                    `https://glowart-backend.onrender.com/exhibition/${id}/${type}-status`,
                     { withCredentials: true }
                 );
                 setIsActive(response.data.active);
@@ -77,7 +77,7 @@ function useInteraction(type) {
         try {
             // 檢查登入狀態
             const userResponse = await axios.get(
-                "http://localhost:8000/login/me",
+                "https://glowart-backend.onrender.com/login/me",
                 { withCredentials: true }
             );
 
@@ -89,7 +89,7 @@ function useInteraction(type) {
 
             // 執行互動操作
             const interactionResponse = await axios.post(
-                `http://localhost:8000/exhibition/${id}/${type}`,
+                `https://glowart-backend.onrender.com/exhibition/${id}/${type}`,
                 {},
                 { withCredentials: true }
             );
@@ -169,7 +169,7 @@ function ExhiSection() {
         // 把所有逻辑都搬进 effect，不再引用外部的 exhibitionData
         (async () => {
             try {
-                const { data } = await axios.get(`http://localhost:8000/exhibition/${id}`);
+                const { data } = await axios.get(`https://glowart-backend.onrender.com/exhibition/${id}`);
                 const exhibitionData = data.exhibition;
 
                 // 若是投稿则重定向到 CreatorPage
@@ -400,7 +400,7 @@ function ReadMore() {
     useEffect(() => {
         const fetchExhibitionDetail = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/exhibition/${id}`);
+                const response = await axios.get(`https://glowart-backend.onrender.com/exhibition/${id}`);
                 setExhibition(response.data.exhibition);
             } catch (error) {
                 console.error('載入展覽詳細資料失敗', error);
@@ -414,8 +414,8 @@ function ReadMore() {
             try {
                 // 根據 is_submission 動態選擇路由
                 const recommendedUrl = exhibition.is_submission
-                    ? `http://localhost:8000/creator/${id}/recommended`
-                    : `http://localhost:8000/exhibition/${id}/recommended`;
+                    ? `https://glowart-backend.onrender.com/creator/${id}/recommended`
+                    : `https://glowart-backend.onrender.com/exhibition/${id}/recommended`;
 
                 console.log('嘗試載入推薦展覽:', recommendedUrl);
                 console.log('展覽狀態:', exhibition.is_submission);

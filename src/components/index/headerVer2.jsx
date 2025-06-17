@@ -39,7 +39,7 @@ function HeaderVer2() {
     };
     const checkLoginStatus = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/login/me")
+            const response = await axios.get("https://glowart-backend.onrender.com/login/me")
 
             if (response.data.user) {
                 console.log("已登入，跳轉到會員頁");
@@ -52,7 +52,7 @@ function HeaderVer2() {
     };
     const ToTerms = async function () {
         try {
-            const response = await axios.get("http://localhost:8000/login/me");
+            const response = await axios.get("https://glowart-backend.onrender.com/login/me");
 
             if (response.data.user) {
                 navigate("/terms");

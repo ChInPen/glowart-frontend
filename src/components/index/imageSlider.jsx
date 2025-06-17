@@ -16,7 +16,7 @@ function ImageSlider() {
 
     const takeImageSliderData = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/ImageSlider');
+            const response = await axios.get('https://glowart-backend.onrender.com/ImageSlider');
 
             // 按讚數降序排序
             const sortedExhibitions = response.data.sort((a, b) => b.like_count - a.like_count);

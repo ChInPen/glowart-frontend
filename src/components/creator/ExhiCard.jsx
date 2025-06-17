@@ -163,7 +163,7 @@ const ExhiCard = ({ results }) => {
   const fetchExhibitions = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:8000/api/Exhibition");
+      const response = await axios.get("https://glowart-backend.onrender.com/api/Exhibition");
       console.log("🎯 資料獲取成功", response.data);
     } catch (error) {
       console.error("❌ API 呼叫失敗：", error.message);

@@ -19,7 +19,7 @@ function ExhibitionsSubmissionFilterSearch() {
   const [isSubmission] = useState(true); // 是否是投稿展覽
   // 初始API請求，一進入畫面就顯示所有展覽資料
   useEffect(() => {
-    axios.get("http://localhost:8000/api/Exhibition") // 獲取展覽資料
+    axios.get("https://glowart-backend.onrender.com/api/Exhibition") // 獲取展覽資料
       .then((response) => {
         if (response.data.length > 0) {
           console.log("🎯 資料獲取成功", response.data);
@@ -61,7 +61,7 @@ function ExhibitionsSubmissionFilterSearch() {
 
       // 發送 GET 請求到後端 API
       const response = await axios.get(
-        `http://localhost:8000/api/Exhibition?${params.toString()}`
+        `https://glowart-backend.onrender.com/api/Exhibition?${params.toString()}`
       );
 
 
@@ -90,7 +90,7 @@ function ExhibitionsSubmissionFilterSearch() {
   //關鍵字搜尋，獨立
   const performSearchBar = (newKeyword) => {
     if (!newKeyword.trim()) {
-      const bb = axios.get("http://localhost:8000/api/Exhibitionfalse") // 獲取展覽資料
+      const bb = axios.get("https://glowart-backend.onrender.com/api/Exhibitionfalse") // 獲取展覽資料
         .then((response) => {
           if (response.data.length > 0) {
             console.log("🎯 資料獲取成功", response.data);

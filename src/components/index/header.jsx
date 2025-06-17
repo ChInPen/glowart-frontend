@@ -39,7 +39,7 @@ function Header() {
     };
     const checkLoginStatus = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/login/me", {
+            const response = await axios.get("https://glowart-backend.onrender.com/login/me", {
                 withCredentials: true,
             });
 
@@ -54,7 +54,7 @@ function Header() {
     };
     const ToTerms = async function () {
         try {
-            const response = await axios.get("http://localhost:8000/login/me", {
+            const response = await axios.get("https://glowart-backend.onrender.com/login/me", {
                 withCredentials: true,
             });
 

@@ -7,7 +7,7 @@ function MemberSidebar() {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:8000/login/logout", {}, {
+      await axios.post("https://glowart-backend.onrender.com/login/logout", {}, {
         withCredentials: true, // ✅ 重要：讓 cookie 傳給後端
       });
       navigate("/");

@@ -27,7 +27,7 @@ function Tickets({ results }) {
         // 取得套票資料
         const takePackages = async function () {
             try {
-                let response = await axios.get('http://localhost:8000/api/Packages');
+                let response = await axios.get('https://glowart-backend.onrender.com/api/Packages');
 
                 // console.log("API回傳資料1111", response.data);
 
@@ -86,7 +86,7 @@ function Tickets({ results }) {
     useEffect(() => {
         async function login() {
             try {
-                const user = await axios.get("http://localhost:8000/login/me") // 取得使用者 ID cookie
+                const user = await axios.get("https://glowart-backend.onrender.com/login/me") // 取得使用者 ID cookie
                 setUser(user.data.user)
                 console.log(user.data.user);
             } catch (err) {
@@ -170,7 +170,7 @@ function Tickets({ results }) {
             return;
         }
         try {
-            const res = await axios.post('http://localhost:8000/ticketEcpay/cashOnDelivery', {
+            const res = await axios.post('https://glowart-backend.onrender.com/ticketEcpay/cashOnDelivery', {
                 cart,
                 recipient: formData.recipient,
                 phone: formData.phone,
@@ -196,7 +196,7 @@ function Tickets({ results }) {
             await handleCashOnDeliveryPayment();
         } else if (paymentMethod === 'credit') {
             try {
-                const res = await axios.post("http://localhost:8000/ticketEcpay/checkout", {
+                const res = await axios.post("https://glowart-backend.onrender.com/ticketEcpay/checkout", {
                     cart,
                     recipient: document.getElementById("recipient").value,
                     phone: document.getElementById("phone").value,

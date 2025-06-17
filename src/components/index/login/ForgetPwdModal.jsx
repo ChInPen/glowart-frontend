@@ -14,7 +14,7 @@ const ForgetPwdModal = ({ switchTo }) => {
       return;
     }
 
-    axios.post("http://localhost:8000/login/forget-password", { email })
+    axios.post("https://glowart-backend.onrender.com/login/forget-password", { email })
       .then(res => {
         switchTo("verify", { email });
       })

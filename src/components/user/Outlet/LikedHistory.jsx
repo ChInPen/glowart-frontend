@@ -11,7 +11,7 @@ function LikedHistory() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const result = await axios.get("http://localhost:8000/user/member/favorite-liked");
+        const result = await axios.get("https://glowart-backend.onrender.com/user/member/favorite-liked");
         setItems(result.data);
       } catch (error) {
         console.error("資料庫連線失敗", error);
@@ -27,7 +27,7 @@ function LikedHistory() {
   const HistoryDelete = async (id) => {
     if (!window.confirm("確定要移除最愛嗎？")) return;
     try {
-      await axios.delete(`http://localhost:8000/user/member/like/${id}`)
+      await axios.delete(`https://glowart-backend.onrender.com/user/member/like/${id}`)
       setItems(prev => prev.filter(item => item.id !== id))
     } catch (error) {
       console.error("刪除失敗", error);

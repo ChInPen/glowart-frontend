@@ -2,7 +2,7 @@ import axios from "axios";
 
 // 建立axios 實例
 const api = axios.create({
-  baseURL: "http://localhost:8000/api", // 後端 API 路徑
+  baseURL: "https://glowart-backend.onrender.com", // 後端 API 路徑
   timeout: 5000,
   headers: {
     "Content-Type": "application/json",

@@ -14,7 +14,7 @@ function MemberDashboard() {
   });
   const [loading, setLoading] = useState(true); // ✅ 新增 loading 狀態
   useEffect(() => {
-    axios.get('http://localhost:8000/login/me')
+    axios.get('https://glowart-backend.onrender.com/login/me')
       .then(res => {
         setUser(res.data.user);
         setEditedData({
@@ -57,9 +57,9 @@ function MemberDashboard() {
       alert("會員名稱只能包含中英文與空格");
       return;
     }
-    axios.put("http://localhost:8000/user/member/profile", dataToSend)
+    axios.put("https://glowart-backend.onrender.com/user/member/profile", dataToSend)
       .then(() => {
-        return axios.get("http://localhost:8000/login/me"); // ✨ 重新抓資料
+        return axios.get("https://glowart-backend.onrender.com/login/me"); // ✨ 重新抓資料
       })
       .then(res => {
         setUser(res.data.user); // ✅ 同步最新資料

@@ -59,7 +59,7 @@ function NewsSection() {
         const fetchNewsDetail = async () => {
             try {
                 console.log("嘗試獲取 ID:", id);
-                const response = await axios.get(`http://localhost:8000/news/highlight/${id}`);
+                const response = await axios.get(`https://glowart-backend.onrender.com/news/highlight/${id}`);
 
                 console.log("伺服器返回:", response.data);
 
@@ -219,7 +219,7 @@ function ReadMore() {
     useEffect(() => {
         const takeNewsData = async function () {
             try {
-                let getaxios = await axios.get(`http://localhost:8000/NewsPage`);
+                let getaxios = await axios.get(`https://glowart-backend.onrender.com/NewsPage`);
 
                 // 過濾掉當前頁面的新聞
                 const filteredNews = getaxios.data.filter(news => news.id !== Number(id));

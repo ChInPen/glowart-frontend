@@ -17,7 +17,7 @@ function NewsBlock() {
         // 獲取最新公告和演藝快訊
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/newsBlock');
+                const response = await axios.get('https://glowart-backend.onrender.com/api/newsBlock');
                 setNewsBlock(response.data);
 
                 // 設置第一個項目的方形圖是預覽圖

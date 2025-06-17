@@ -10,7 +10,7 @@ const LoginModal = ({ switchTo, onLoginSuccess }) => {
   const handleLogin = async function () {
     try {
       const response = await axios.post(
-        "http://localhost:8000/login/login",
+        "https://glowart-backend.onrender.com/login/login",
         { email, password },
         { withCredentials: true }
       );

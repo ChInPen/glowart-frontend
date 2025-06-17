@@ -12,7 +12,7 @@ const Map = () => {
     }
     const takeExhibition = async (region) => {
         try {
-            const takeaxios = await axios.get(`http://localhost:8000/map/${region}`) // 按下區域
+            const takeaxios = await axios.get(`https://glowart-backend.onrender.com/map/${region}`) // 按下區域
             const randomFive = getRandomItems(takeaxios.data, 4) // 抓四個資料
             setmapData(randomFive)
         } catch (error) {

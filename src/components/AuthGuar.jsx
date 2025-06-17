@@ -9,7 +9,7 @@ export default function AuthGuard() {
   useEffect(() => {
     const verify = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/login/me');
+        const res = await axios.get('https://glowart-backend.onrender.com/login/me');
         if (!res.data.user) {
           navigate('/');
         }

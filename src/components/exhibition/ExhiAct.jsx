@@ -183,7 +183,7 @@ const ExhiAct = ({ results }) => {
   const fetchExhibitions = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:8000/api/Exhibitionfalse");
+      const response = await axios.get("https://glowart-backend.onrender.com/api/Exhibitionfalse");
       if (response.data && response.data.length > 0) {
         console.log("🎯 資料獲取成功", response.data);
       } else {

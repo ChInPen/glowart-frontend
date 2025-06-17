@@ -7,7 +7,7 @@ function SubmissionHistory() {
   const [submissions, setSubmissions] = useState([]);
   const [isEditing, setIsEditing] = useState(false); //修改狀態
   useEffect(() => {
-    axios.get("http://localhost:8000/user/member/submissions")
+    axios.get("https://glowart-backend.onrender.com/user/member/submissions")
       .then(res => {
         setSubmissions(res.data);
       })
@@ -18,7 +18,7 @@ function SubmissionHistory() {
   const HistoryDelete = async (id) => {
     if (!window.confirm("確定要刪除嗎?")) return;
     try {
-      await axios.delete(`http://localhost:8000/user/member/review/${id}`)
+      await axios.delete(`https://glowart-backend.onrender.com/user/member/review/${id}`)
       setSubmissions(prev => prev.filter(item => item.id !== id))
     } catch (error) {
       console.error("刪除失敗", error);
