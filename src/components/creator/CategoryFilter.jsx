@@ -9,7 +9,7 @@ function CategoryFilter({ onChange }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const categories = await axios.get(`${process.env.REACT_APP_API_URL}/user/Category`);
+        const categories = await axios.get(`https://glowart-backend.onrender.com/user/Category`);
         setcategories(categories.data)
         console.log(categories.data);
 
