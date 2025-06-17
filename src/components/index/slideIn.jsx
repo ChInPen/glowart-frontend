@@ -13,7 +13,7 @@ function SlideIn() {
     useEffect(() => {
         const takeCarouselData = async () => {
             try {
-                const takeaxios = await axios.get(`${process.env.REACT_APP_API_URL}/SlideIn`);
+                const takeaxios = await axios.get(`https://glowart-backend.onrender.com/SlideIn`);
                 console.log('API 返回數據:', takeaxios.data);
                 
                 if (takeaxios.data && takeaxios.data.length > 0) {
