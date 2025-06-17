@@ -9,7 +9,7 @@ function CategoryFilter({ onChange }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const categories = await axios.get("http://localhost:8000/user/Category");
+        const categories = await axios.get(`${process.env.REACT_APP_API_URL}/user/Category`);
         setcategories(categories.data)
         console.log(categories.data);
 
