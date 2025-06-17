@@ -101,8 +101,8 @@ function Header() {
                         <div className={style.dropdown}>
                             <span>|展覽活動 </span>
                             <div className={style.dropdownContent}>
-                                <a href="/exhibition">展覽資訊</a>
-                                <a href="/creator">投稿藝廊</a>
+                                <Link to="/exhibition">展覽資訊</Link>
+                                <Link to="/creator">投稿藝廊</Link>
                             </div>
                         </div>
                     </div>
@@ -118,7 +118,7 @@ function Header() {
                         <div className={style.dropdown}>
                             <span>|藝感選品</span>
                             <div className={style.dropdownContent}>
-                                <a href="/tickets">套票專區</a>
+                                <Link to="/tickets">套票專區</Link>
                             </div>
                         </div>
                         <div className={style.dropdown}>
