@@ -66,7 +66,7 @@ function LikedHistory() {
             </div>
             {isEditing && (
               <div style={{ marginTop: "10px" }}>
-                <button className={style.butdel} onClick={() => HistoryDelete(item.id)}><img style={{ width: "150%",height:"150%" }} src="/images/closeBtn.png" alt="叉叉"/></button>
+                <button className={style.butdel} onClick={() => HistoryDelete(item.id)}><img style={{ width: "150%",height:"150%" }} src="/images/closebtn.png" alt="叉叉"/></button>
               </div>
             )}
           </div>

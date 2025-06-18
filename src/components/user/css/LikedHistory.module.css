@@ -80,16 +80,6 @@
   transform: scale(1.05);
 }
 
-.closeBtn {
-  width: 10px;
-  height: 10px;
-  transition: all 0.2s ease;
-}
-
-.butdel:hover .closeBtn {
-  transform: scale(1.1);
-}
-
 .statusBox {
   position: absolute;
   right: 0;
