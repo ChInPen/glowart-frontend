@@ -89,11 +89,6 @@ function Categories({ onSubmitPost }) {
         }
         categoryData()
     }, [])
-    // const handleSaveDraft = () => {
-    //     console.log("已儲存草稿！");
-    //     // 這裡可以加上 API 呼叫、狀態更新等
-    //     alert("已儲存草稿")
-    // };
     return (
         <>
             <div className={style.wrapper}>
@@ -131,27 +126,26 @@ function Submit() {
 
     const submitPost = async () => {
         const form = formRef.current;
-        const formData = new FormData(form); // ✅ 這裡用 FormData 包整個表單
+        const formData = new FormData(form); //用 FormData 包整個表單
 
         // 處理 otherall，避免變成 JSON 字串
         const otherall = formData.getAll('otherall');
         formData.delete('otherall'); // 先刪掉原本的
 
-        // ✅ 把多選的值一個一個重新加入 FormData
+        // 把多選的值一個一個重新加入 FormData
         otherall.forEach((item) => {
             formData.append('otherall', item);
         });
 
-        // ✅ 這裡把圖片資料也加入 FormData
-        if (images.length >= 2) {
-            // 第一張長方形圖片
-            formData.append('image_long', images[0], images[0].name);
-            // 第二張方形圖片
-            formData.append('image_square', images[1], images[1].name);
-        } else {
-            alert("請上傳長方形和方形兩張圖片");
-            return;
-        }
+        // if (images.length >= 2) {
+        //     // 第一張長方形圖片
+        //     formData.append('image_long', images[0], images[0].name);
+        //     // 第二張方形圖片
+        //     formData.append('image_square', images[1], images[1].name);
+        // } else {
+        //     alert("請上傳長方形和方形兩張圖片");
+        //     return;
+        // }
 
         // 這個檢查只是做資料驗證，不會影響圖片的上傳
         const fieldLabels = {
@@ -180,7 +174,7 @@ function Submit() {
                 continue;
             }
             if (key === 'other_category' || key === 'remark' || key === "ticket_remaining") { continue }
-            // ✅ 修正部分：先確認是字串型態再做 trim()
+            // 修正部分：先確認是字串型態再做 trim()
             if (typeof value === 'string' && value.trim() === "") {
                 alert(`請填寫${fieldLabels[key]}`);
                 return;
