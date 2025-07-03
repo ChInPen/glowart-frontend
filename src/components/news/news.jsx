@@ -24,7 +24,7 @@ function News() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await api.get("/news/news");
+        const res = await api.get("/api/news/news");
 
         console.log("✅ 全部資料:", res.data);
         setHighlightData(res.data);
