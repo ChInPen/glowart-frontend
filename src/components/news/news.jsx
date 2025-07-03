@@ -24,7 +24,7 @@ function News() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await api.get("/api/news/news");
+        const res = await api.get("/news/news");
 
         console.log("✅ 全部資料:", res.data);
         setHighlightData(res.data);
@@ -35,7 +35,7 @@ function News() {
 
     const fetchAnnouncement = async () => {
       try {
-        const res = await api.get("/api/news/announcement");
+        const res = await api.get("/news/announcement");
         console.log("✅ 最新公告資料:", res.data);
         setAnnouncementData(res.data);
       } catch (err) {
