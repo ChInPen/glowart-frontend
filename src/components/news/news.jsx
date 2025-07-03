@@ -35,7 +35,7 @@ function News() {
 
     const fetchAnnouncement = async () => {
       try {
-        const res = await api.get("/news/announcement");
+        const res = await api.get("/api/news/announcement");
         console.log("✅ 最新公告資料:", res.data);
         setAnnouncementData(res.data);
       } catch (err) {
